@@ -1,0 +1,21 @@
+version = 0.1
+
+[default.deploy.parameters]
+stack_name = "employee-management"
+resolve_s3 = true
+s3_prefix = "employee-management"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+disable_rollback = false
+parameter_overrides = "Environment=prod"
+
+[default.build.parameters]
+cached = true
+parallel = true
+
+[default.validate.parameters]
+lint = true
+
+[default.sync.parameters]
+watch = true
